@@ -13,7 +13,7 @@ unpack /filesystem/home/pi /home/pi pi
 unpack /filesystem/boot /boot
 unpack /filesystem/root_init /
 
-apt-get update
+apt-get update && upgrade -y 
 
 # Display a custom Splashscreen when booting the Rpi
 if [ "$FULLPAGEOS_CUSTOM_SPLASHSCREEN" == "yes" ]
@@ -32,7 +32,7 @@ apt-get remove -y --purge  $remove_extra
 apt-get autoremove -y
 
 #apt-get tools
-apt-get -y --force-yes install python2.7 git screen checkinstall avahi-daemon libavahi-compat-libdnssd1 xterm xdotool vim expect
+apt-get -y --force-yes install python3 idle3 git screen checkinstall avahi-daemon libavahi-compat-libdnssd1 xterm xdotool vim expect
 
 if [ "$FULLPAGEOS_INCLUDE_CHROMIUM" == "yes" ]
 then
