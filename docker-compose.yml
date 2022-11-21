@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  fullpageos:
+    image: guysoft/custompios:devel
+    container_name: fullpageos_builder
+    tty: true
+    restart: always
+    privileged: true
+    volumes:
+      - c:\fullpageos\distro:/distro
+    devices:
+      - /dev/loop-control
